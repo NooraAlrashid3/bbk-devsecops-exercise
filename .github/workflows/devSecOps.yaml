@@ -6,14 +6,6 @@ on:
   workflow_dispatch:
 
 jobs:
-name: DevSecOps Pipeline
-
-on:
-  push:
-    branches: [ main ]
-  workflow_dispatch:
-
-jobs:
 
   component-analysis-npm-audit:
     name: Component Analysis and NPM Audit
@@ -39,6 +31,7 @@ jobs:
   build-dummy:
     name: Build Echo Statement
     runs-on: ubuntu-latest
+    needs: component-analysis-npm-audit
     steps:
       - name: Echo Building Going on
         run: echo "Building going on"
@@ -50,17 +43,5 @@ jobs:
     steps:
       - name: Echo Deploying Going on
         run: echo "Deploying going on"
-  build-dumy:
-    name: Build Echo Statement
-    runs-on: ubuntu-latest
-    steps:
-      - name: Echo Building Going on
-        run: echo "Building going on"
-
-  deploy-dumy:
-    name: Deploy Echo Statement
-    runs-on: ubuntu-latest
-    needs: build-dumy
-    steps:
-      - name: Echo Deploying Going on
-        run: echo "Deploying going on"
+  
+  
