@@ -34,6 +34,16 @@ jobs:
         with:
           name: npm-audit-report
           path: npm-audit.json
+  
+  bandit-analysis:
+    name: Bandit analysis - Python
+    runs-on: ubuntu-latest
+    needs: component-analysis-npm-audit
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      
 
   build-dummy:
     name: Build Echo Statement
