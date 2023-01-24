@@ -8,7 +8,7 @@ on:
 jobs:
   build-dumy:
     name: Build Echo Statement
-    runs-in: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Echo Building Going on
         run: echo "Building going on"
