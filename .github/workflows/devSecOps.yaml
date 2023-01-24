@@ -37,7 +37,7 @@ jobs:
   
   bandit-analysis:
     name: Bandit analysis - Python
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04.6
     needs: component-analysis-npm-audit
     steps:
       - name: Checkout
