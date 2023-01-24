@@ -48,7 +48,7 @@ jobs:
   build-dummy:
     name: Build Echo Statement
     runs-on: ubuntu-latest
-    needs: component-analysis-npm-audit
+    needs: bandit-analysis
     steps:
       - name: Echo Building Going on
         run: echo "Building going on"
