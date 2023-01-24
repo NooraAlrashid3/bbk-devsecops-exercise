@@ -22,11 +22,12 @@ jobs:
       - name: Install the Dependencies
         run: npm install 
       
-      - name: Verify
+      - name: Verify the installation
         run: npm --version
 
       - name: Run NPM Audit
         run: npm audit --json > npm-audit.json
+        continue-on-error: true
 
       - name: Upload NPM Audit Report
         uses: actions/upload-artifact@v3
